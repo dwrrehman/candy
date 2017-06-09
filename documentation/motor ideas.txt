@@ -1,0 +1,33 @@
+
+//----------idea 2 -----------------------
+
+motor1stepslice= [0,1,0,1] //dummy initialization
+//                                                  //would be defined by the previous function. 
+motor2stepslice = [0,1,1,0] //same
+delay = 2
+for i in [ ["motor1", motor1stepslice], ["motor2", motor2stepslice] ]{
+   setstep(i)
+   sleep(2/1000)}
+
+
+
+
+//--------- idea 1 -------------------------
+
+// this is so we can control individual steps in the motors. 
+_motor1state = 0 //initialize to a value in 0-3. ...use 0-7 for half stepping. 
+
+def motor1stepone(steps){
+      if _motor1state = 0{      //first state 
+         motor1stepslice = [0,1,1,0]}    
+          // ^instead of immediately calling setStep(...), we make a slice, and pass it on. 
+      if _motor1state = 1{           //second state 
+         motor1stepslice = [1,1,0,0]}
+      if _motor1state = 2{            // third state
+         motor1stepslice = [1,0,0,1]}
+      if _motor1state = 3{           //fourth state 
+         motor1stepslice = [1,0,1,0]}
+     
+
+
+

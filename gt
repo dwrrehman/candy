@@ -1,0 +1,13 @@
+echo file:
+read file
+echo message:
+read message
+if [ "$file" = "" ]
+then 
+	git add *
+else 
+	git add $file
+fi
+git commit -m "$message"
+git push
+echo all done.

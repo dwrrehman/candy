@@ -1,0 +1,105 @@
+------ motor protocol description -----
+ 
+
+tldr:
+
+byte1:[txbl,tzbl,cbl,txbr];:2
+byte2:[tzbr,cbr,wled,ctrl];:2
+byte3:[nx,ny,gled,ctrl];:0
+
+;:tldr
+
+
+
+
+
+- motors 1-7 arent used in the protocol.
+- 2 bits per motor, encoded as:
+	
+	0 : [0][0] : relaxed state
+	1 : [0][1] : forwards state
+	2 : [1][0] : backwards state
+	3 : [1][1] : hold state
+
+
+// ---------- actual protocol --------
+
+1-7 : not shown, already executed on pi3.
+
+
+
+  2     2      2     2         // the pi computer looking at these two bits.
+  7     8      9     10        // motor or led being controlled
+ ____  ____   ____  ____
+[0][0][0][0] [0][0][0][0]      // physical bit layout
+
+---------------------------    // (next byte)
+
+  2     2      2     0&2
+  11    12     15    0x
+ ____  ____   ____  ____
+[0][0][0][0] [0][0][0][0]
+
+---------------------------
+
+  0     0      0     0&2
+  13    14     16    0x
+ ____  ____   ____  ____
+[0][0][0][0] [0][0][0][0]
+
+---------------------------
+
+
+
+
+
+0 {null} 
+0x {control bits}
+1 txfl
+2 tzfl
+3 cfl
+4 txfr
+5 tzfr
+6 cfr
+
+7 txbl
+8 tzbl
+9 cbl
+10 txbr
+11 tzbr
+12 cbr
+
+13 nx
+14 ny
+
+15 white led
+16 green led
+
+
+
+
+
+
+control bits:
+
+(ctrl1,ctrl2)
+[0][0][0][0] : nothing, null command.
+[0][0][0][1] : alive signal
+[0][0][1][0] : ?
+[0][0][1][1] : ?
+
+[0][1][0][0] : ?
+[0][1][0][1] : ?
+[0][1][1][0] : ?
+[0][1][1][1] : ?
+
+[1][0][0][0] : ?
+[1][0][0][1] : ?
+[1][0][1][0] : ?
+[1][0][1][1] : ?
+
+[1][1][0][0] : ?
+[1][1][0][1] : ?
+[1][1][1][0] : ?
+[1][1][1][1] : shutdown both slave computers
+

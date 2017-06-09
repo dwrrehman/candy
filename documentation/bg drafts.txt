@@ -1,0 +1,56 @@
+
+bg() drafts.
+
+what we have 
+
+txflsetstep function:
+    - move the a particialr stepper motor once in a specific direction 
+    - relax the motor if desired. not calling the function holds the motor at one posistion
+        - the standing posistion is held after the init sequence finishes. boot state of motor is 0. (relaxed)
+    - function knows when the motor has went past its limit and regects movement if it causes motor to go outofbound;
+
+
+what the bg() needs to do:
+
+    - it needs to call all the motor functions into a thread
+    - it needs to put up an interface for the htm to work with. (ie a decoder)
+    - it needs some descion logic of which command to execute from either vs() or htm()
+        - vs will 
+
+
+
+
+
+   htm motor interface:
+
+    - the connection between a particular neuron and the bg must be learned. 
+         - learning rules:
+               - each neron in htmoutput has a potential pool that it can connect to. 
+               - if an htmouput appears twice in a row, increment the permanance of the synapse 
+               - ...
+    - there is a possible connection (or connnections) that result in the motor movement of every single motor on the body. 
+        - the vs() influence on htm motor output is parrelleled by the addition of a vestiular ocular reflex ( vor(); ) which will generally have prioirty over 
+
+
+        htm 00001000000010000000000001000010000000000001000000000000000001000000...000
+
+	
+
+htm.dt:
+
+becuase input always arrives at L6 and then goes to l5, L6's function might be "to choose whether or not it wants to move a motor" based on the current input.
+ie, a form of attention. 
+
+i still have to implement the thalamus, 
+
+
+
+
+
+
+
+
+
+vs() drafts.
+
+

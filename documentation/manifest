@@ -1,0 +1,170 @@
+----------------------------------- manifest  ---------------------------------------------
+
+this is a large document for planning the software architechure of the robot candy.
+
+
+
+
+------------------------------------- todo: -----------------------------------------------
+
+	- research control theory. 
+	- research function of hippocapmus
+	- thal integration / lgn=term-spot-for-vision
+	- emotion as it relates to the thalamus
+	- - (but define "emotion" as the combination and use of pleasue and pain neurtransmitters)
+
+
+
+
+
+
+------------------------------------ recentchanges: ----------------------------------------
+
+	renamed 
+		"bg" to "bn"
+		"mm" to "sn"
+	added 
+		"n"(neocortex), 
+		"c"(cerebellum), 
+		"t"(thalamus), 
+		"bs"(brainstem), 
+		"lgn"(lateral geneiculate nuclei), 
+
+	deleted 
+		"drg", 
+
+
+--------------------------------------- files: -------------------------------------------
+
+	n3.cpp     : neocortex                 : an htm system implementation
+	t3.cpp     : thalumus                  : 
+	c3.cpp     : cerebellum                : vestiblular system, takes in acceleromoter data and 
+
+	bs3.cpp    : brainstem                 : executes autonomic functions, such as the {BLANK}
+
+	bn3.cpp    : basal nuclei              : control distribution of motor commands, and integrate neocortex and vestiular system commands.
+	sn3.cpp    : spinal nerves             : final delegate of motor commands– what utimately executes the commands.
+	lgn3.cpp   : lateral geniculate nuclei : first to receive input from retinas continuously
+
+	/cl3.cpp    : camera loop              : to provide a thread of cycling and retreiving all visual input, and then synchronize with neocortex
+	/ml3.cpp    : motor loop               : to continoually distrubute call basal ganlia, and get motor data from pi2
+	/vc3.hpp    : variables and constants  : 
+
+	main3.cpp  : main program              : the whole brain 
+	makefile   : build the program         : connects all pieces of the brain together
+
+/ = must rename or redefine
+
+
+--------------------------------------- flow: ---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------- notes -------------------------------------------
+
+
+cranial nerves carries sensory input into, and motor commands out of the brain.
+
+brainstem regulates autonomic nervous system functions, 
+most of which are irrelvant to the robot.
+
+bn is strongly linnked with the bs, n, and t.
+ its functions include: 
+	control of voluntary motor movements, 
+	procedural learning, 
+	routine behaviors or "habits"
+	eye movements, 
+
+vestibulo-ocular reflex:
+	- the system deals with the ny motor, primarily,
+	- the y axis of the gyroscopic data is translated into the movements for the ny motor.
+	- the same system can be used for the x axis- you just need to use the nx motor, and the x axis data on the gyro.
+	- ... has to do wth the superior colliculi
+;:vor
+
+diencephalon - relays and processes sensory information, controls emtions, autonomic function ,
+
+midbrain - procoesses autodry and visual dataand generates involutary motor responses
+
+pons - a tract and relay center , 
+the pons relay signals from the forebrain to the cerebellum, about info pertaining to:
+	sleep, 
+	hearing, 
+	posture.
+
+
+
+
+
+
+the cerebellum ia responsible for involtunary and voltunary motor activitie bassed on memory and sensory input
+
+componets of motor control:
+	desired actions - conscious/unconscious
+	balance, and stabllization - unconscious
+
+
+
+
+
+
+
+
+ ----------------------------- tounderstand: --------------------------------------
+
+.humans:
+
+
+	vestibular:	
+	https://vestibular.ong/sites/default/files/Balance-motor-output_0.jpg
+
+	general:
+	https://en.wikipedia.org/wiki/Autonomic_nervous_system
+	https://en.wikipedia.org/wiki/Thalamocortical_radiations
+	https://en.wikipedia.org/wiki/Cognition      // run through this
+	https://en.wikipedia.org/wiki/Motor_control
+
+	visual input:
+	https://en.wikipedia.org/wiki/Lateral_geniculate_nucleus
+	https://en.wikipedia.org/wiki/Vestibulo-ocular_reflex
+
+	audio input:
+	https://en.wikipedia.org/wiki/Inferior_colliculus
+	https://en.wikipedia.org/wiki/Medial_geniculate_nucleus
+
+	consiousness/"data on its own activity":
+	https://en.wikipedia.org/wiki/Thalamo-cortico-thalamic_circuits
+;
+
+.general:
+	control theory:
+	https://en.wikipedia.org/wiki/Control_theory
+	https://en.wikipedia.org/wiki/Internal_model_(motor_control)
+	https://en.m.wikipedia.org/wiki/Action_selection
+
+;
+
+
+;:tu
+
+
+
+
+
+
+
